@@ -53,7 +53,7 @@ class UrlRedirect extends React.Component{
               <Route basename="/urlRedirector/#" path="/" >
                 <Redirector url={this.state.url} />
               </Route>
-              <Route basename="/urlRedirector/#" path="/edit" >
+              <Route basename="/urlRedirector/#/edit" path="/edit" >
                 <Editor update={this.updateUrl} />
               </Route>
             </Switch>
