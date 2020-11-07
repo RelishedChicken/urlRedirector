@@ -50,10 +50,10 @@ class UrlRedirect extends React.Component{
         <div>
           <Router>
             <Switch>
-              <Route basename="/urlRedirector/#" path="/" >
+              <Route basename="/urlRedirector/#" exact path="/" >
                 <Redirector url={this.state.url} />
               </Route>
-              <Route basename="/urlRedirector/#/edit" path="/edit" >
+              <Route basename="/urlRedirector/#" exact path="/edit" >
                 <Editor update={this.updateUrl} />
               </Route>
             </Switch>
