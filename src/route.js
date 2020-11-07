@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
@@ -50,11 +50,11 @@ class UrlRedirect extends React.Component{
         <div>
           <Router>
             <Switch>
-              <Route exact path="/urlRedirector/edit">
-                <Redirector url={this.state.url}/>
+              <Route basename="/urlRedirector" path="/" >
+                <Redirector url={this.state.url} />
               </Route>
-              <Route exact path="/urlRedirector/edit">
-                <Editor update={this.updateUrl}/>
+              <Route basename="/urlRedirector" path="/edit" >
+                <Editor update={this.updateUrl} />
               </Route>
             </Switch>
           </Router>
@@ -62,7 +62,7 @@ class UrlRedirect extends React.Component{
       )
     }else{
       this.readFromDatabase();
-      return(<h1>Loading link</h1>);
+      return(<h1>Loading...</h1>);
     }
   }
 }
